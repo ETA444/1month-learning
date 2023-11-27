@@ -1,0 +1,155 @@
+{
+  "main": {
+    "id": "62c723f2143e02c7",
+    "type": "split",
+    "children": [
+      {
+        "id": "d19af665284946fa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ce831005ff630e18",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "beginner-ruby/summary.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "30dddf8c15413389",
+    "type": "split",
+    "children": [
+      {
+        "id": "602ac241cd9c7652",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b97a211b5294c555",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a6ac6c800f8861fb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8bbc2ec4a71f19eb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "eca2e61ba9629c81",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e32cef440e108aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "45575979ec7ef810",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "beginner-ruby/summary.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "757c424efbd57650",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "beginner-ruby/summary.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d4015605a70071f1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5350818692364385",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "beginner-ruby/summary.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "ce831005ff630e18",
+  "lastOpenFiles": [
+    "README.md",
+    "beginner-ruby/summary.md",
+    "beginner-ruby"
+  ]
+}
