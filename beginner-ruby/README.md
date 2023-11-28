@@ -1,6 +1,14 @@
 # Learning Log
 ## Chapter 1: Setting up
-
+- **Chapter 1 Official Curriculum on OneMonth**
+	1. Welcome
+	2. Ruby background
+	3. Getting set up
+	4. Customizing terminal
+	5. Setting up Ruby
+	6. Debugging
+	7. Command Line Crash Course
+	
 First we install Ruby, which is done on Windows with the [Ruby Installer](https://rubyinstaller.org/downloads/).  The teacher recommends [GitBash](https://git-scm.com/download/win), which I recommend using through Windows PowerShell to avoid many errors.
 ## Command Line Crash Course
 Next, we learned some very basic commands such as:
@@ -25,7 +33,15 @@ name = "Your Name"
 Some basic commands and we move on to the next chapter.
 
 ## Chapter 2: Modest beginnings
-
+- **Chapter 2 Official Curriculum on OneMonth**
+	1. Playing with Ruby
+	2. Puts and your first script
+	3. Errors and debugging
+	4. Comments
+	5. Numbers & Math
+	6. Variables
+	7. Strings & Text
+	8. Getting User Input
 ### More PowerShell (MPS#)
 Created the first .rb file and further got accustomed to PowerShell. 
 ```shell
@@ -48,9 +64,13 @@ Needed to do some renaming
 Rename-Item -Path "ruby-1.rb" -NewName "timenow.rb"
 ```
 ### Learning some Ruby
-First introduced to `puts`, which stands for put string and is used to output strings in the terminal. As the initial exercises are limited, I will make up some of my own projects (P#) along the way.
+First introduced to `puts`, which stands for put string and is used to output strings in the terminal. As the initial exercises are limited, I will make up some of my own projects (P#) along the way. 
+
+**The goal is to apply all knowledge gained from the chapter curriculum.**
 
 - **Project 1:** To practice some Ruby, I decided to write a simple script that outputs the current time whenever it is called: `timenow.rb` Also helps me keep track of time ;)
+- **Project 2:** Simple script that calculates E (energy) based on the formula E=m\*c^2. It asks the user to input value for the mass.
+- **Project 3:** Asks you a couple of basic questions in the console and returns random facts (practicing `get`) .
 
 #### P1 - `timenow.rb`: *tells the current time*
 - **step1:** Used native object `Time` with method `.now` to get current time.
@@ -69,6 +89,70 @@ COLOR_RESET = "\e[0m"
 # output the time
 puts "#{COLOR_MAGENTA}The time is currently: #{COLOR_GREEN}#{current_time}#{COLOR_RESET}"
 ```
+> 🏆 **Achievement unlocked:** `First 10 lines of Ruby code!`
 
-> 🏆: First 10 lines of Ruby code!
+#### P2 - `energy.rb`: calculates energy (E)
+- step0: define ANSI escape codes to add colors to messages
+- step1: define speed of light
+- step2: ask for and get mass from the user using `gets`, which reads the user input. We also use `.to_f` to make it a float.
+	- We also use `.chomp` to make sure new line at the end is omitted.
+- step3: define energy by its formula
+- step4: use `puts` to output the result neatly
 
+```ruby
+# define the ANSI escape codes
+COLOR_GREEN = "\e[32m"
+COLOR_MAGENTA = "\e[35m"
+COLOR_YELLOW = "\e[33m"
+COLOR_RESET = "\e[0m"
+
+# greet user
+puts "#{COLOR_MAGENTA}Welcome to the energy calculator!"
+
+# define speed of light
+c = 299792458
+
+# ask for and get mass from the user
+print "#{COLOR_GREEN}Specify the mass of the object: "
+m = gets.chomp.to_f
+
+# define energy
+e = m * (c ** 2)
+
+# output result
+puts "#{COLOR_YELLOW}E = #{e} joules#{COLOR_RESET}"
+```
+> 🏆 **Achievement unlocked:** `First 25 lines of Ruby code!`
+
+#### P3 - `whoareyou.rb`: asks you questions
+- step 0: define the colors
+- step 1: ask the questions
+- step 2: give the facts
+```ruby
+# define the ANSI escape codes
+COLOR_GREEN = "\e[32m" #facts
+COLOR_MAGENTA = "\e[35m" #dialogue
+COLOR_YELLOW = "\e[33m" #questions
+COLOR_RESET = "\e[0m"
+
+# greet user
+puts "#{COLOR_MAGENTA}Hey! I will ask you some questions and give you soem facts."
+
+# ask questions
+## name
+print "#{COLOR_YELLOW}What is your first name? "
+name = gets.chomp
+## age
+print "#{COLOR_YELLOW}Nice name, now what is your age? "
+age = gets.chomp.to_i
+
+# compile the facts
+dog_age = age / 7
+name_backwards = name.reverse
+
+# output the facts
+puts "#{COLOR_GREEN}Cool, #{name}. FYI, your age in dog years is \
+ #{dog_age} and you name backwards spells \
+  #{name_backwards}. Bye!"
+```
+> 🏆 **Achievement unlocked:** `First 50 lines of Ruby code!`

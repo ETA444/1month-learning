@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "beginner-ruby/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "beginner-ruby/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "beginner-ruby/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "beginner-ruby/README.md"
               }
             }
           }
@@ -148,11 +148,15 @@
   },
   "active": "ce831005ff630e18",
   "lastOpenFiles": [
+    "beginner-ruby/projects/whoareyou.rb",
+    "beginner-ruby/projects/whoru.rb",
+    "beginner-ruby/projects/energy.rb",
+    "README.md",
+    "beginner-ruby/curriculum.md",
     "beginner-ruby/README.md",
     "beginner-ruby/projects/timenow.rb",
     "beginner-ruby/projects/ruby-1.rb",
     "beginner-ruby/projects",
-    "README.md",
     "beginner-ruby"
   ]
 }

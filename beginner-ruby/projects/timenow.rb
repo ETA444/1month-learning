@@ -6,5 +6,7 @@ COLOR_GREEN = "\e[32m"
 COLOR_MAGENTA = "\e[35m"
 COLOR_RESET = "\e[0m"
 
-# output the time
+# output the time with new lines around
+puts ""
 puts "#{COLOR_MAGENTA}The time is currently: #{COLOR_GREEN}#{current_time}#{COLOR_RESET}"
+puts ""
