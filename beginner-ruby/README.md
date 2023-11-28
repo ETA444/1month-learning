@@ -32,7 +32,7 @@ name = "Your Name"
 
 Some basic commands and we move on to the next chapter.
 
-## Chapter 2: Modest beginnings
+## Chapter 2: Beginnings
 - **Chapter 2 Official Curriculum on OneMonth**
 	1. Playing with Ruby
 	2. Puts and your first script
@@ -43,6 +43,7 @@ Some basic commands and we move on to the next chapter.
 	7. Strings & Text
 	8. Getting User Input
 ### More PowerShell (MPS#)
+#### MPS#1: Creating a file
 Created the first .rb file and further got accustomed to PowerShell. 
 ```shell
 # created a new folder first
@@ -58,17 +59,16 @@ subl 'ruby-1.rb'
 ruby ruby-1.rb
 ```
 As things come up that I need and learn I will note them in this section. **Goal is to do most things in PowerShell.**
-#### MPS#1: Renaming a file in PS
+#### MPS#2: Renaming an existing file
 Needed to do some renaming
 ```shell
 Rename-Item -Path "ruby-1.rb" -NewName "timenow.rb"
 ```
-### Learning some Ruby
+### Practicing some Ruby I
 First introduced to `puts`, which stands for put string and is used to output strings in the terminal. As the initial exercises are limited, I will make up some of my own projects (P#) along the way. 
 
 **The goal is to apply all knowledge gained from the chapter curriculum.**
-
-- **Project 1:** To practice some Ruby, I decided to write a simple script that outputs the current time whenever it is called: `timenow.rb` Also helps me keep track of time ;)
+- **Project 1:** To practice some Ruby, I decided to write a simple script that outputs the current time whenever it is called. Helps me keep track of time ;)
 - **Project 2:** Simple script that calculates E (energy) based on the formula E=m\*c^2. It asks the user to input value for the mass.
 - **Project 3:** Asks you a couple of basic questions in the console and returns random facts (practicing `get`) .
 
@@ -156,3 +156,31 @@ puts "#{COLOR_GREEN}Cool, #{name}. FYI, your age in dog years is \
   #{name_backwards}. Bye!"
 ```
 > 🏆 **Achievement unlocked:** `First 50 lines of Ruby code!`
+
+
+## Chapter 3: Intermediate beginnings
+- **Chapter 3 Official Curriculum on OneMonth**
+	1. Recap of Beginner Ruby
+	2. Methods, part 1
+	3. Methods, part 2
+	4. Methods, part 3
+	5. Reading Files
+	6. Writing Files
+	7. Copying Files
+### Practicing Some Ruby II
+We continue the quest to 9,001 lines. 🦍
+> *"If variables are the nouns, methods are the verbs."*
+> - Mattan Griffel
+
+**The goal is to apply all knowledge gained from the chapter curriculum.**
+- **Project 4:** counts the lines in each `.rb` file inside the projects folder and adds them up to output the total number of lines in all projects and total number of lines *per* project.
+#### P4 - `linecounter.rb`: counts total lines of ruby
+- **step 1:** define the line counting function
+- **step 2:** folder path dialog
+- **step 3:** iterate over the files and count the lines
+- **step 4:** output the info
+```ruby
+# define the line_counter function
+def line_counter(file_path)
+```
+
