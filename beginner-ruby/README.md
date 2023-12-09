@@ -1,3 +1,17 @@
+# Achievement Log
+> 🏆 **Achievements:
+> 	> ✅ `First 10 lines of Ruby code!`
+> 	> ✅ `First 25 lines of Ruby code!`
+> 	> ✅ `First 50 lines of Ruby code!`
+> 	> ✅ `First 100 lines of Ruby code!`
+> 	> ✅ `First 200 lines of Ruby code!`
+> 	> ✅ `First 500 lines of Ruby code!`
+> 	> ⏳ `First 1000 lines of Ruby code!`
+> 	> ⏳ `First 2500 lines of Ruby code!`
+> 	> ⏳ `First 5000 lines of Ruby code!`
+> 	> ⏳ `First 7500 lines of Ruby code!`
+> 	> ⏳ `First 9001 lines of Ruby code!`
+> 	
 # Learning Log
 ## Chapter 1: Setting up
 - **Chapter 1 Official Curriculum on OneMonth**
@@ -64,7 +78,7 @@ Needed to do some renaming
 ```shell
 Rename-Item -Path "ruby-1.rb" -NewName "timenow.rb"
 ```
-### Practicing some Ruby I
+### Practicing Some Ruby I
 First introduced to `puts`, which stands for put string and is used to output strings in the terminal. As the initial exercises are limited, I will make up some of my own projects (P#) along the way. 
 
 **The goal is to apply all knowledge gained from the chapter curriculum.**
@@ -173,7 +187,10 @@ We continue the quest to 9,001 lines. 🦍
 > - Mattan Griffel
 
 **The goal is to apply all knowledge gained from the chapter curriculum.**
-- **Project 4:** counts the lines in each `.rb` file inside the projects folder and adds them up to output the total number of lines in all projects and total number of lines *per* project.
+- **Project 4:** `linecounter.rb`
+- **Project 5:** `simplecalc.rb`
+- **Project 6:** `typewriter.rb`
+- **Project 7:** `filecopier.rb`
 #### P4 - `linecounter.rb`: counts total lines of ruby
 - **step 1:** define the line counting function
 - **step 2:** folder path dialog
@@ -233,4 +250,504 @@ end
 puts "#{COLOR_GREEN} The total lines in all .rb files: #{total_line_count}!#{COLOR_RESET}"
 ```
 > 🏆 **Achievement unlocked:** `First 100 lines of Ruby code!`
+
+#### P5 - `simplecalc.rb`: simple calculator
+- **step 1:** Define the calculator function.
+- **step 2:** Define the ANSI escape codes.
+- **step 3:** Calculator Dialogue
+```ruby
+# Simple Calculator #
+# This calculator can perform an operation between two numbers.
+
+# Define the calculator function #
+def calc(operation, n1, n2)
+	if operation == 'add'
+		puts "Adding #{n1} and #{n2} ..."
+		result = n1 + n2
+		puts "#{COLOR_GREEN}The result is: #{result}#{COLOR_RESET}"
+	elsif operation == 'sub'
+		puts "Subtracting #{n1} and #{n2} ..."
+		result = n1 - n2
+		puts "#{COLOR_GREEN}The result is: #{result}#{COLOR_RESET}"
+	elsif operation == 'mul'
+		puts "Multiplying #{n1} and #{n2} ..."
+		result = n1 * n2
+		puts "#{COLOR_GREEN}The result is: #{result}#{COLOR_RESET}"
+	elsif operation == 'div'
+		puts "Dividing #{n1} and #{n2} ..."
+		result = n1 / n2
+		puts "#{COLOR_GREEN}The result is: #{result}#{COLOR_RESET}"
+	else 
+		puts "#{COLOR_RED}This is not a valid operation.#{COLOR_RESET}"
+	end
+end
+
+# Define the ANSI escape codes #
+COLOR_GREEN = "\e[32m" 
+COLOR_MAGENTA = "\e[35m" 
+COLOR_YELLOW = "\e[33m" 
+COLOR_RED = "\e[31m"
+COLOR_RESET = "\e[0m"
+
+# Calculator Dialogue #
+puts "Hi! What would you like to calculate today?"
+puts "This calculator can: \n - Add (add) \n - Subtract (sub) \n - Multiply (mul) \n - Divide (div)!"
+
+## get the operation
+print "#{COLOR_YELLOW}What operation would you like to perform? (add/sub/mul/div):#{COLOR_RESET}"
+op = gets.chomp.downcase
+
+## get n1
+print "#{COLOR_YELLOW}Provide the first number: #{COLOR_RESET}"
+number_1 = gets.chomp.to_f
+
+## get n2
+print "#{COLOR_YELLOW}Provide the second number: #{COLOR_RESET}"
+number_2 = gets.chomp.to_f
+
+# Calculation and Output #
+calc(op, number_1, number_2)
+```
+
+### Reading files 
+Here are the Ruby `open()` modes:
+
+- `'r'`: Read-only (default mode).
+- `'w'`: Write-only (creates a new file or truncates an existing file).
+- `'a'`: Append (creates a new file or appends to an existing file).
+- `'r+'`: Read and write.
+- `'w+'`: Read and write (creates a new file or truncates an existing file).
+- `'a+'`: Read and write (creates a new file or appends to an existing file).
+- `'b'`: Binary mode (e.g., `'rb'`, `'wb'`, `'ab'`).
+- `'t'`: Text mode (default mode, e.g., `'rt'`, `'wt'`, `'at'`).
+
+You can use these modes as strings when opening files in Ruby, such as `File.open('filename.txt', 'r')`.
+
+#### P6 - `typewriter.rb`: creates and writes files
+- **step 1:** color codes + initial dialogue
+- **step 2:** get the new file's name
+- **step 3:** loop that asks for a new line until user says 'stop'
+
+```ruby
+# TypeWriter #
+# Simple file creation and writing #
+# The function will ask you the filename, then 
+# you can start writing lines until you need to. 
+# When you don't want to write say 'stop'.
+
+# color codes
+COLOR_MAGENTA = "\e[35m" #dialogue
+COLOR_YELLOW = "\e[33m" #questions
+COLOR_RESET = "\e[0m"
+
+# initial message 
+puts "#{COLOR_MAGENTA}Welcome to the TypeWriter! You can write lines into a new file with this function."
+puts "Functionality:"
+puts "- Every time you are asked for text you type on a new line."
+puts "- If you don't want to write any new lines type 'stop'. \n"
+
+# get filename
+puts "#{COLOR_YELLOW}First things first, how would you like to name the new file? (e.g. newfile.txt): #{COLOR_RESET}"
+filename = gets.chomp
+
+# create file and write (loop)
+File.open(filename, 'w') do |file|
+	loop do 
+		# get content
+		puts "#{COLOR_YELLOW}What would you like to write? (type 'stop' to stop writing): \n #{COLOR_RESET}"
+		line = gets.chomp
+
+		# logic
+		if line == 'stop'
+			break # stop loop
+		else
+			file.puts(line)
+		end
+	end
+end
+```
+> 🏆 **Achievement unlocked:** `First 200 lines of Ruby code!`
+
+#### P7 - `filecopier.rb`: copies files
+- **step 1:** color codes + initial dialogue
+- **step 2:** get the old file's name + its contents
+- **step 3:** get the new name + write the new file with the old content
+
+```ruby
+# FileCopier #
+# Simple file content copier #
+# The function will ask you which file it should copy,
+# then what the name of the new files is
+# and copies the old file's content into the new one.
+
+## This function was painstakingly written by using TypeWriter (typewriter.rb). :D ##
+
+# color codes
+COLOR_MAGENTA = "\e[35m" #dialogue
+COLOR_YELLOW = "\e[33m" #questions
+COLOR_RESET = "\e[0m" #color reset
+
+# initial dialogue
+puts "#{COLOR_MAGENTA}Welcome to the FileCopier! You can copy the contents of one file into another with this function."
+puts "Functionality:"
+puts "- Name the file, you want to copy the contents of"
+puts "- Choose the name of the new file.#{COLOR_RESET}"
+
+# get filename
+puts "#{COLOR_YELLOW}What is the name of the original file?: #{COLOR_RESET}"
+old_filename = gets.chomp
+
+# scrape content from that file
+old_filecontent = open(old_filename).read
+
+puts "#{COLOR_MAGENTA}Great! I got the contents. #{COLOR_RESET}"
+puts "#{COLOR_YELLOW}What should I name the new file?: #{COLOR_RESET}"
+new_filename = gets.chomp
+
+File.open(new_filename, 'w') do |file|
+file.write(old_filecontent)
+end
+puts "#{COLOR_MAGENTA}All done, I created #{COLOR_YELLOW}#{new_filename}#{COLOR_RESET} #{COLOR_MAGENTA}with the content from#{COLOR_RESET} #{COLOR_YELLOW}#{old_filename}#{COLOR_RESET}#{COLOR_MAGENTA}.#{COLOR_RESET}"
+```
+
+
+## Chapter 4: Advanced beginnings
+- **Chapter 4 Official Curriculum on OneMonth**
+	1. Logic in Ruby
+	2. Boolean Practice
+	3. If Statements
+	4. Else and Elsif
+	5. Arrays
+	6. Loops
+	7. FizzBuzz
+	8. FizzBuzz solution
+	9. More About Arrays
+	10. Hashes
+
+### Logic operators in Ruby
+```ruby
+== # equal
+!= # not equal
+> # greater than
+< # less than
+&& # and
+|| # or
+! # not
+```
+### Practicing Some Ruby III
+We continue the quest to 9,001 lines. 🦍
+
+**The goal is to apply all knowledge gained from the chapter curriculum.**
+- **Project 8:** `trueorfalse.rb`
+
+#### P8 - `trueorfalse.rb`: logic test
+- **step 1:** color codes + initial dialogue
+- **step 2:** define questions and solutions
+- **step 3:** define starting time + set correct count to 0
+- **step 4:** start asking questions and comparing the answer to the solution with appropriate outputs to the user
+- **step 5:** define the end time + calculate total time taken in minutes and seconds
+- **step 6:** output the total correct answers and total time taken to the user
+
+```ruby
+# True or False Test #
+# Test your knowledge of logic operators with this True or False test! #
+# It counts the number of correct answers and the total time taken to do the test #
+
+# color codes
+COLOR_MAGENTA = "\e[35m" #dialogue
+COLOR_YELLOW = "\e[33m" #questions
+COLOR_RED = "\e[31m" # wrong solution
+COLOR_GREEN = "\e[32m" # correct solution
+COLOR_RESET = "\e[0m" #color reset
+
+# initial dialogue
+puts "#{COLOR_MAGENTA}Welcome to the True or False test! Test your knowledge on logic operators in Ruby with these 20 questions."
+puts "You will be presented with a line of Ruby and you need to answer whether it would return true or false if you were to run it."
+puts "Let's begin the test!#{COLOR_RESET} \n"
+
+# define all the questions (q) and solutions (s) in the test
+q1 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}true && true#{COLOR_RESET} (true/false): "
+s1 = "true"
+
+q2 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}false && true #{COLOR_RESET} (true/false): "
+s2 = "false"
+
+q3 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}1 == 1 && 2 == 1 #{COLOR_RESET} (true/false): "
+s3 = "false"
+
+q4 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}'love' == 'love'#{COLOR_RESET} (true/false): "
+s4 = "true"
+
+q5 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}1 == 1 || 2 != 1#{COLOR_RESET} (true/false): "
+s5 = "true"
+
+q6 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}true && 1 == 1#{COLOR_RESET} (true/false): "
+s6 = "true"
+
+q7 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}false && 0 != 0#{COLOR_RESET} (true/false): "
+s7 = "false"
+
+q8 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}true || 1 == 1#{COLOR_RESET} (true/false): "
+s8 = "true"
+
+q9 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}'time' == 'money'#{COLOR_RESET} (true/false): "
+s9 = "false"
+
+q10 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}1 != 0 && 2 == 1#{COLOR_RESET} (true/false): "
+s10 = "false"
+
+q11 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}'I Can't Believe Its Not Butter!' != 'butter'#{COLOR_RESET} (true/false): "
+s11 = "false"
+
+q12 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}'one' == 1#{COLOR_RESET} (true/false): "
+s12 = "false"
+
+q13 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}!(true && false)#{COLOR_RESET} (true/false): "
+s13 = "true"
+
+q14 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}!(1 == 1 && 0 != 1)#{COLOR_RESET} (true/false): "
+s14 = "false"
+
+q15 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}!(10 == 1 || 1000 == 1000)#{COLOR_RESET} (true/false): "
+s15 = "false"
+
+q16 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}!(1 != 10 || 2 == 4)#{COLOR_RESET} (true/false): "
+s16 = "false"
+
+q17 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}!('love' == 'love' && 'time' == 'money')#{COLOR_RESET} (true/false): "
+s17 = "true"
+
+q18 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}1 == 1 && !('one' == 1 || 1 == 0)#{COLOR_RESET} (true/false): "
+s18 = "false"
+
+q19 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}'chunky' == 'bacon' && !(3 == 4 || 3 == 3)#{COLOR_RESET} (true/false): "
+s19 = "false"
+
+q20 = "#{COLOR_MAGENTA}What would this return:#{COLOR_RESET} #{COLOR_YELLOW}3 == 3 && !('love' == 'love' || 'Ruby' == 'Fun')#{COLOR_RESET} (true/false): "
+s20 = "false"
+
+# count of correct answers
+correct_count = 0
+
+# record the start time
+start_time = Time.now
+
+# start asking questions (q) and gettings answers (a) and compare those to the solution (s)
+# add to the count if correct
+puts q1
+a1 = gets.chomp.downcase
+
+if a1 == s1
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q2
+a2 = gets.chomp.downcase
+
+if a2 == s2
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q3
+a3 = gets.chomp.downcase
+
+if a3 == s3
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q4
+a4 = gets.chomp.downcase
+
+if a4 == s4
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q5
+a5 = gets.chomp.downcase
+
+if a5 == s5
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q6
+a6 = gets.chomp.downcase
+
+if a6 == s6
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q7
+a7 = gets.chomp.downcase
+
+if a7 == s7
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q8
+a8 = gets.chomp.downcase
+
+if a8 == s8
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q9
+a9 = gets.chomp.downcase
+
+if a9 == s9
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q10
+a10 = gets.chomp.downcase
+
+if a10 == s10
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q11
+a11 = gets.chomp.downcase
+
+if a11 == s11
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q12
+a12 = gets.chomp.downcase
+
+if a12 == s12
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q13
+a13 = gets.chomp.downcase
+
+if a13 == s13
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q14
+a14 = gets.chomp.downcase
+
+if a14 == s14
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q15
+a15 = gets.chomp.downcase
+
+if a15 == s15
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q16
+a16 = gets.chomp.downcase
+
+if a16 == s16
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q17
+a17 = gets.chomp.downcase
+
+if a17 == s17
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q18
+a18 = gets.chomp.downcase
+
+if a18 == s18
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q19
+a19 = gets.chomp.downcase
+
+if a19 == s19
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect, but let's try another one!#{COLOR_RESET} \n"
+end
+
+puts q20
+a20 = gets.chomp.downcase
+
+if a20 == s20
+	puts "#{COLOR_GREEN}Correct!#{COLOR_RESET} \n"
+	correct_count += 1
+else 
+	puts "#{COLOR_RED}No that was incorrect.#{COLOR_RESET} \n"
+end
+
+# record the end time
+end_time = Time.now
+
+# calculate the time taken to complete the test
+time_taken = end_time - start_time
+
+# convert the time taken to minutes and seconds
+minutes = (time_taken / 60).to_i
+seconds = (time_taken % 60).to_i
+
+puts "#{COLOR_MAGENTA}Good job on finishing the test!"
+puts "You had #{COLOR_YELLOW}#{correct_count} correct answers#{COLOR_MAGENTA}."
+puts "Time taken: #{COLOR_YELLOW}#{minutes} minutes and #{seconds} seconds#{COLOR_MAGENTA}.#{COLOR_RESET}"
+```
+> 🏆 **Achievement unlocked:** `First 500 lines of Ruby code!`
+
 
