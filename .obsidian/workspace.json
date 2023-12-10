@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "beginner-ruby/README.md",
+                "file": "cmdline-basic/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "eca2e61ba9629c81",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "beginner-ruby/README.md",
+                "file": "cmdline-basic/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "beginner-ruby/README.md",
+                "file": "cmdline-basic/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "beginner-ruby/README.md"
+                "file": "cmdline-basic/README.md"
               }
             }
           }
@@ -149,6 +148,11 @@
   },
   "active": "ce831005ff630e18",
   "lastOpenFiles": [
+    "README.md",
+    "cmdline-basic/README.md",
+    "beginner-ruby/README.md",
+    "cmdline-basic",
+    "New folder",
     "beginner-ruby/projects/fizzbuzz.rb",
     "beginner-ruby/projects/trueorfalse.rb",
     "beginner-ruby/projects/typewriter-copy.rb",
@@ -157,11 +161,6 @@
     "beginner-ruby/projects/typewriter.rb",
     "beginner-ruby/projects/read-write.rb",
     "beginner-ruby/projects/newfile.txt",
-    "beginner-ruby/projects/playground-chapter3.rb",
-    "beginner-ruby/projects/playground.rb",
-    "beginner-ruby/projects/simplecalc.rb",
-    "README.md",
-    "beginner-ruby/curriculum.md",
-    "beginner-ruby/README.md"
+    "beginner-ruby/curriculum.md"
   ]
 }
