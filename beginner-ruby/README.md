@@ -1,11 +1,17 @@
 # Achievement Log
 > 🏆 **Achievements:
 > 	> ✅ `First 10 lines of Ruby code!`
+> 	> 	with `timenow.rb`
 > 	> ✅ `First 25 lines of Ruby code!`
+> 	> 	with `energy.rb`
 > 	> ✅ `First 50 lines of Ruby code!`
+> 	> 	with `whoareyou.rb`
 > 	> ✅ `First 100 lines of Ruby code!`
+> 	> 	with `linecounter.rb`
 > 	> ✅ `First 200 lines of Ruby code!`
+> 	> 	with `simplecalc.rb` & `typewriter.rb`
 > 	> ✅ `First 500 lines of Ruby code!`
+> 	> 	with `filecopier.rb` & `trueorfalse.rb`
 > 	> ⏳ `First 1000 lines of Ruby code!`
 > 	> ⏳ `First 2500 lines of Ruby code!`
 > 	> ⏳ `First 5000 lines of Ruby code!`

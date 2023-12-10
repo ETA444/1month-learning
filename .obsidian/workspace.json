@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "eca2e61ba9629c81",
@@ -146,7 +147,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ce831005ff630e18",
+  "active": "b97a211b5294c555",
   "lastOpenFiles": [
     "beginner-ruby/projects/trueorfalse.rb",
     "beginner-ruby/projects/typewriter-copy.rb",
