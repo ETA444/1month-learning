@@ -147,8 +147,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b97a211b5294c555",
+  "active": "ce831005ff630e18",
   "lastOpenFiles": [
+    "beginner-ruby/projects/fizzbuzz.rb",
     "beginner-ruby/projects/trueorfalse.rb",
     "beginner-ruby/projects/typewriter-copy.rb",
     "beginner-ruby/projects/filecopier.rb",
@@ -159,7 +160,6 @@
     "beginner-ruby/projects/playground-chapter3.rb",
     "beginner-ruby/projects/playground.rb",
     "beginner-ruby/projects/simplecalc.rb",
-    "beginner-ruby/projects/linecounter.rb",
     "README.md",
     "beginner-ruby/curriculum.md",
     "beginner-ruby/README.md"

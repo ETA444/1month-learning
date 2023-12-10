@@ -756,4 +756,40 @@ puts "Time taken: #{COLOR_YELLOW}#{minutes} minutes and #{seconds} seconds#{COLO
 ```
 > 🏆 **Achievement unlocked:** `First 500 lines of Ruby code!`
 
+### On Different Loops in Ruby
+In Ruby, `loop do`, `.each do`, and `.each {}` are all constructs used for iterating over collections (like arrays and hashes) or performing repetitive tasks. However, they have different use cases and behaviors:
 
+1. `loop do`:
+   - `loop do` is a basic loop construct that creates an infinite loop until you explicitly break out of it using a `break` statement.
+   - It is typically used when you need to perform a task repeatedly until a certain condition is met. You must provide your own exit condition.
+   - Example:
+     ```ruby
+     loop do
+       # Some code here
+       break if some_condition_met
+     end
+     ```
+
+2. `.each do`:
+   - `.each` is an enumerable method available for arrays and other enumerable collections in Ruby.
+   - It iterates through each element of the collection and executes the specified block of code for each element.
+   - It's useful for applying the same operation to each item in a collection.
+   - Example with an array:
+     ```ruby
+     numbers = [1, 2, 3, 4, 5]
+     numbers.each do |num|
+       puts num
+     end
+     ```
+
+3. `.each {}`:
+   - `.each` can also be used with a block written using curly braces `{}` instead of `do` and `end`.
+   - This is simply an alternative syntax for the `.each` loop.
+   - It's mostly a matter of personal preference or coding style which one you choose to use.
+   - Example:
+     ```ruby
+     numbers = [1, 2, 3, 4, 5]
+     numbers.each { |num| puts num }
+     ```
+
+In summary, `loop do` is a general-purpose looping construct, while `.each do` and `.each {}` are used for iterating over collections, with `.each {}` being an alternative syntax for `.each do`. The choice between them often depends on the specific use case and your coding style preferences.
