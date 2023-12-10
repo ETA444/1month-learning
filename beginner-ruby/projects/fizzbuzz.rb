@@ -12,7 +12,7 @@
 		puts "#{n} FizzBuzz"
 	elsif n % 3 == 0
 		puts "#{n} Fizz"
-	elsif n % 5 == 5
+	elsif n % 5 == 0
 		puts "#{n} Buzz"
 	else
 		puts n

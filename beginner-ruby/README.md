@@ -793,3 +793,123 @@ In Ruby, `loop do`, `.each do`, and `.each {}` are all constructs used for itera
      ```
 
 In summary, `loop do` is a general-purpose looping construct, while `.each do` and `.each {}` are used for iterating over collections, with `.each {}` being an alternative syntax for `.each do`. The choice between them often depends on the specific use case and your coding style preferences.
+
+### FizzBuzz Challenge 
+```ruby
+# Write a program that prints the numbers from 1 to 100. 
+# But for multiples of three print "Fizz" instead of the number 
+# and for the multiples of five print "Buzz". 
+# For numbers which are multiples of both three and five print "FizzBuzz".
+
+# Tip: % (modulo) tells you what's left over when you 
+# divide one number by another.
+# ex. number % 3 == 0
+
+(1..100).each do |n|
+	if n % 3 == 0 && n % 5 == 0
+		puts "#{n} FizzBuzz"
+	elsif n % 3 == 0
+		puts "#{n} Fizz"
+	elsif n % 5 == 0
+		puts "#{n} Buzz"
+	else
+		puts n
+	end
+end
+```
+
+### Arrays:
+
+1. **Creating Arrays:**
+   - You can create an array by enclosing elements in square brackets `[]`.
+
+```ruby
+numbers = [1, 2, 3, 4, 5]
+fruits = ["apple", "banana", "cherry"]
+```
+
+2. **Accessing Elements:**
+   - You can access elements in an array using index notation, starting from 0.
+
+```ruby
+first_number = numbers[0]  # Gets the first element (1)
+second_fruit = fruits[1]   # Gets the second element ("banana")
+```
+
+3. **Adding Elements:**
+   - You can add elements to an array using methods like `<<` or `push`.
+
+```ruby
+numbers << 6   # Adds 6 to the end of the numbers array
+fruits.push("orange")  # Adds "orange" to the end of the fruits array
+```
+
+4. **Removing Elements:**
+   - You can remove elements from an array using methods like `pop`, `shift`, or `delete_at`.
+
+```ruby
+last_number = numbers.pop  # Removes and returns the last element (5)
+first_fruit = fruits.shift  # Removes and returns the first element ("apple")
+   
+# Create an array
+fruits = ["apple", "banana", "cherry", "date", "elderberry"]
+   
+# Remove an element at a specific index
+removed_fruit = fruits.delete_at(2)  # Removes the element at index 2 ("cherry")
+   
+# Display the modified array and the removed element
+puts "Modified Array: #{fruits.inspect}"
+puts "Removed Fruit: #{removed_fruit}"
+```
+
+5. **Iterating Through Arrays:**
+   - You can iterate through arrays using methods like `each`.
+
+```ruby
+numbers.each do |number|
+	puts number
+end
+
+fruits.each { |fruit| puts fruit }
+   ```
+
+### Hashes:
+
+1. **Creating Hashes:**
+   - You can create a hash by enclosing key-value pairs in curly braces `{}`.
+
+```ruby
+person = { "name" => "John", "age" => 30, "city" => "New York" }
+```
+
+2. **Accessing Values:**
+   - You can access values in a hash using keys.
+
+```ruby
+name = person["name"]  # Gets the value associated with the key "name"
+age = person["age"]    # Gets the value associated with the key "age"
+```
+
+3. **Adding and Modifying Entries:**
+   - You can add or modify entries in a hash using the assignment operator `=`.
+
+```ruby
+person["job"] = "Engineer"  # Adds a new key-value pair or modifies an existing one
+```
+
+4. **Removing Entries:**
+   - You can remove entries from a hash using the `delete` method.
+
+```ruby
+person.delete("age")  # Removes the key-value pair with the key "age"
+```
+
+5. **Iterating Through Hashes:**
+   - You can iterate through hashes using methods like `each`.
+
+```ruby
+person.each do |key, value|
+	puts "#{key}: #{value}"
+end
+```
+
