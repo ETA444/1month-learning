@@ -8,15 +8,12 @@
 		- with `whoareyou.rb`
 	- ✅ `First 100 lines of Ruby code!`
 		- with `linecounter.rb`
-	- ✅ `First 200 lines of Ruby code!`
+	- ✅ `First 250 lines of Ruby code!`
 		- with `simplecalc.rb` & `typewriter.rb`
 	- ✅ `First 500 lines of Ruby code!`
 		- with `filecopier.rb` & `trueorfalse.rb`
-	- ⏳ `First 1000 lines of Ruby code!`
-	- ⏳ `First 2500 lines of Ruby code!`
-	- ⏳ `First 5000 lines of Ruby code!`
-	- ⏳ `First 7500 lines of Ruby code!`
-	- ⏳ `First 9001 lines of Ruby code!`
+	- ✅ `First 750 lines of Ruby code!
+		- with `dataview.rb` (see repo: dataview)
 # Learning Log
 ## Chapter 1: Setting up
 - **Chapter 1 Official Curriculum on OneMonth**
