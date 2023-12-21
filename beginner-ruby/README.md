@@ -13,7 +13,7 @@
 	- ✅ `First 500 lines of Ruby code!`
 		- with `filecopier.rb` & `trueorfalse.rb`
 	- ✅ `First 750 lines of Ruby code!
-		- with `dataview.rb` (see repo: dataview)
+		- with `dataview.rb` (see github.com/eta444/dataview)
 # Learning Log
 ## Chapter 1: Setting up
 - **Chapter 1 Official Curriculum on OneMonth**
